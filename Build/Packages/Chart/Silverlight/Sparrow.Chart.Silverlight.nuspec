@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Sparrow.Chart.Silverlight</id>
+    <version>$version$</version>
+    <authors>vinothkumarj</authors>
+    <owners>vinothkumarj</owners>
+    <licenseUrl>https://sparrowtoolkit.codeplex.com/license</licenseUrl>
+    <projectUrl>https://sparrowtoolkit.codeplex.com/</projectUrl>
+	<iconUrl>http://img838.imageshack.us/img838/3679/logobhm.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Sparrow Toolkit a set of Data Visualization controls(Chart, Gauge,BulletGraph and Sparkline) with lot of flexibility, performance, faster and more efficient for Silverlight</description>
+    <releaseNotes>Sparrow Toolkit for Silverlight</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>Silverlight Chart Control charting datavisualization</tags>    
+  </metadata>
+</package>

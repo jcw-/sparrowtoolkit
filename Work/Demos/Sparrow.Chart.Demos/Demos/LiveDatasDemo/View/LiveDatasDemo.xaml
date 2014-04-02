@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Sparrow.Chart.Demos.Demos.LiveDatasDemo.LiveDatasDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:chart="http://sparrowtoolkit.codeplex.com/wpf"
+             xmlns:local="clr-namespace:Sparrow.Chart.Demos.Demos.LiveDatasDemo"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="containerStyle" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#FFAAFFAA"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style TargetType="{x:Type Line}" x:Key="crossLineStyle">
+            <Setter Property="Stroke" Value="#FFAAFFAA"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+        </Style>
+        <Style TargetType="{x:Type Line}" x:Key="axisLineStyle">
+            <Setter Property="Stroke" Value="#FFAAFFAA"/>
+            <Setter Property="StrokeThickness" Value="0"/>
+        </Style>
+        <Style TargetType="{x:Type Line}" x:Key="minorcrossLineStyle">
+            <Setter Property="Stroke" Value="#FF225633"/>
+            <Setter Property="StrokeThickness" Value="0.25"/>
+        </Style>        
+
+    </UserControl.Resources>
+    <Grid >
+        <Grid.DataContext>
+            <local:DataGenerator/>
+        </Grid.DataContext>
+        <chart:SparrowChart Foreground="White" FontFamily="Arial" ContainerBorderStyle="{StaticResource containerStyle}" Margin="5"  x:Name="Chart" >
+            <chart:SparrowChart.Background>
+                <LinearGradientBrush EndPoint="0.504,1.5" StartPoint="0.504,0.03">
+                    <GradientStop Color="#FF00170B" Offset="0"/>
+                    <GradientStop Color="#FF005C2C" Offset="0.8"/>
+                </LinearGradientBrush>
+            </chart:SparrowChart.Background>
+            <chart:SparrowChart.Legend>
+                <chart:Legend Padding="10" Header="Live Fourier Series"/>
+            </chart:SparrowChart.Legend>
+            <chart:SparrowChart.XAxis>
+                <chart:LinearXAxis CrossLineStyle="{StaticResource crossLineStyle}" MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}" AxisLineStyle="{StaticResource axisLineStyle}" MinValue="2" MinorTicksCount="3" MaxValue="5"  ShowCrossLines="True" Header="Time(ms)" StringFormat="0.0"/>
+            </chart:SparrowChart.XAxis>
+            <chart:SparrowChart.YAxis>
+                <chart:LinearYAxis CrossLineStyle="{StaticResource crossLineStyle}"  MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}" AxisLineStyle="{StaticResource axisLineStyle}" MinValue="-15" MinorTicksCount="3" MaxValue="15" ShowCrossLines="True" StringFormat="0.0" Header="Voltage(mV)" >
+                </chart:LinearYAxis>
+            </chart:SparrowChart.YAxis>
+            <chart:LineSeries Label="Amplitude = 2" PointsSource="{Binding Collection}" Stroke="#FFA3FFC9" XPath="Value" YPath="Value1" StrokeThickness="2" UseSinglePart="True">
+            </chart:LineSeries>           
+        </chart:SparrowChart>
+    </Grid>
+</UserControl>

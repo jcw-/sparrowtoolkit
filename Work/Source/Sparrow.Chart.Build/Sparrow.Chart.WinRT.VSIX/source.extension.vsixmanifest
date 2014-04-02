@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="SparrowWinRT..0b5cefcf-6d64-439f-88b6-ae3dbbcd97b5" Version="13.1.0.1" Language="en-US" Publisher="vinothkumarj" />
+    <DisplayName>Sparrow.Chart.WinRT</DisplayName>
+    <Description xml:space="preserve">Sparrow Toolkit for WinRT</Description>
+    <MoreInfo >http://sparrowtoolkit.codeplex.com</MoreInfo>
+    <License>License.txt</License>
+    <GettingStartedGuide>http://sparrowtoolkit.codeplex.com</GettingStartedGuide>
+    <ReleaseNotes>http://sparrowtoolkit.codeplex.com </ReleaseNotes>
+    <Icon>logo.ico</Icon>
+    <PreviewImage>logo.png</PreviewImage>
+  </Metadata>
+  <Installation Scope="Global" AllUsers="true">
+    <InstallationTarget Id="Microsoft.ExtensionSDK" TargetPlatformIdentifier="Windows" TargetPlatformVersion="v8.0" SdkName="Sparrow Toolkit for WinRT" SdkVersion="13.0.0.1" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.0" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.ExtensionSDK" d:Source="File" Path="SDKManifest.xml" />
+    <Asset d:Source="File" Path="References\CommonConfiguration\neutral\Sparrow.Chart.WinRT.45.dll" Type="Microsoft.ExtensionSDK" />
+    <Asset d:Source="File" Path="Redist\CommonConfiguration\neutral\Sparrow.Chart.WinRT.45.pri" Type="Microsoft.ExtensionSDK" />
+    <Asset d:Source="File" Path="References\CommonConfiguration\neutral\Sparrow.Chart.WinRT.45.XML" Type="Microsoft.ExtensionSDK" />
+    <Asset d:Source="File" Path="Redist\CommonConfiguration\neutral\Sparrow.Chart.WinRT\Legend\Legend.xaml" Type="Microsoft.ExtensionSDK" />
+    <Asset d:Source="File" Path="Redist\CommonConfiguration\neutral\Sparrow.Chart.WinRT\Themes\generic.xaml" Type="Microsoft.ExtensionSDK" />
+    <Asset d:Source="File" Path="Redist\CommonConfiguration\neutral\Sparrow.Chart.WinRT\Themes\Styles.xaml" Type="Microsoft.ExtensionSDK" />
+  </Assets>
+</PackageManifest>

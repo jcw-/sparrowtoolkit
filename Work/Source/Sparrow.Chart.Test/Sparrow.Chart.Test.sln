@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparrow.Chart.Test", "Sparrow.Chart.Test.csproj", "{C81723A2-4733-4AA5-B8C5-7BD7F69E1C69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparrow.Chart", "..\Sparrow.Chart\Sparrow.Chart.csproj", "{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C81723A2-4733-4AA5-B8C5-7BD7F69E1C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81723A2-4733-4AA5-B8C5-7BD7F69E1C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81723A2-4733-4AA5-B8C5-7BD7F69E1C69}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C81723A2-4733-4AA5-B8C5-7BD7F69E1C69}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C81723A2-4733-4AA5-B8C5-7BD7F69E1C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81723A2-4733-4AA5-B8C5-7BD7F69E1C69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81723A2-4733-4AA5-B8C5-7BD7F69E1C69}.Release|x64.ActiveCfg = Release|Any CPU
+		{C81723A2-4733-4AA5-B8C5-7BD7F69E1C69}.Release|x86.ActiveCfg = Release|Any CPU
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Debug|x64.ActiveCfg = Debug|x64
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Debug|x64.Build.0 = Debug|x64
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Debug|x86.ActiveCfg = Debug|x86
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Debug|x86.Build.0 = Debug|x86
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Release|x64.ActiveCfg = Release|x64
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Release|x64.Build.0 = Release|x64
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Release|x86.ActiveCfg = Release|x86
+		{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

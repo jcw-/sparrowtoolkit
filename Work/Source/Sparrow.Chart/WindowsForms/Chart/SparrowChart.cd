@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sparrow.Chart.SparrowChart" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gACAQZABAFABAUAQABEACACAAAEAAABIAACAACJCAAE=</HashCode>
+      <FileName>Chart\SparrowChart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.Series" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>kAAAAAABECBAgAAAABICAAAAAQkAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Series\Series.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.SeriesCollection" Collapsed="true">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Collections\SeriesCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.Axis" Collapsed="true">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ECKIQEABCABAgAEwAAAAAAAAAgIBAAkCAIAEAACAAAA=</HashCode>
+      <FileName>Axis\Axis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.Axes" Collapsed="true">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Collections\Axes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.Legend" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Legend\Legend.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.XAxis" Collapsed="true">
+    <Position X="10.25" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="Sparrow.Chart.Axis" ManuallyRouted="true">
+      <Path>
+        <Point X="13" Y="1.312" />
+        <Point X="13" Y="2.177" />
+        <Point X="11" Y="2.177" />
+        <Point X="11" Y="2.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Axis\XAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.YAxis" Collapsed="true">
+    <Position X="14" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="Sparrow.Chart.Axis" ManuallyRouted="true">
+      <Path>
+        <Point X="13" Y="1.312" />
+        <Point X="13" Y="2.177" />
+        <Point X="14.75" Y="2.177" />
+        <Point X="14.75" Y="2.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Axis\YAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.ChartPoint" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Point\ChartPoint.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sparrow.Chart.FastProperty" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAABABAQAAAgAAAAAAAAAAAAAAAAQAAAAQ=</HashCode>
+      <FileName>Misc\FastReflection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.PointCollection" Collapsed="true">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Collections\PointCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.SeriesPart" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Part\SeriesPart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.PartCollection" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Collections\PartCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.LineSeriesPart" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAACAAAAAADAAAAAIABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Part\LineSeriesPart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.XYSeries" Collapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAgAAAAAAAAAAAAQEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Series\XYSeries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.LineSeries" Collapsed="true">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="Sparrow.Chart.XYSeries" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="4.191" />
+        <Point X="5.25" Y="4.654" />
+        <Point X="5.25" Y="4.654" />
+        <Point X="5.25" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Series\LineSeries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.LinearXAxis" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAkAAIAIAACAAAABACEAAAAgAAAAAAA=</HashCode>
+      <FileName>Axis\LinearXAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.LinearYAxis" Collapsed="true">
+    <Position X="15" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAkAAIAIAACAAAABACEAAAAgAAAAAAA=</HashCode>
+      <FileName>Axis\LinearYAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.DateTimeXAxis" Collapsed="true">
+    <Position X="9" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Axis\DateTimeXAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.CategoryXAxis" Collapsed="true">
+    <Position X="11.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAIAAAAAAABAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Axis\CategoryXAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.TimeSpanXAxis" Collapsed="true">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <InheritanceLine Type="Sparrow.Chart.XAxis" ManuallyRouted="true">
+      <Path>
+        <Point X="11" Y="2.941" />
+        <Point X="11" Y="4.109" />
+        <Point X="12" Y="4.109" />
+        <Point X="12" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Axis\TimeSpanXAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.CategoryYAxis" Collapsed="true">
+    <Position X="13" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAIAAAAAAABAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Axis\CategoryYAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.DateTimeYAxis" Collapsed="true">
+    <Position X="13" Y="6" Width="1.5" />
+    <InheritanceLine Type="Sparrow.Chart.YAxis" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.75" Y="2.941" />
+        <Point X="14.75" Y="5.625" />
+        <Point X="13.875" Y="5.625" />
+        <Point X="13.875" Y="6" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Axis\DateTimeYAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.TimeSpanYAxis" Collapsed="true">
+    <Position X="15" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Axis\TimeSpanYAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.LogarithmicXAxis" Collapsed="true">
+    <Position X="10.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAkIAIAIAACAAAAAACEAAAAgAAAAAAg=</HashCode>
+      <FileName>Axis\LogarithmicXAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.LogarithmicYAxis" Collapsed="true">
+    <Position X="14" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAkIAIAIAACAAAAAACEAAAAgAAAAAAg=</HashCode>
+      <FileName>Axis\LogarithmicYAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.DoublePoint" Collapsed="true">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAA=</HashCode>
+      <FileName>Point\DoublePoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.DateTimePoint" Collapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAABAAAgAQAAAAA=</HashCode>
+      <FileName>Point\DateTimePoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.Point" Collapsed="true">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Point\Point.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.TextStyle" Collapsed="true">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACIAACAgAAAgAAAAgAAAAgAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Misc\TextStyle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Sparrow.Chart.Theme" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAJEAgAAAAAABIAAAQAEAAAQBAEAgQAAAAAAEAEIA=</HashCode>
+      <FileName>Misc\Theme.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sparrow.Chart.AxisPosition" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>Enum\AxisPosition.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

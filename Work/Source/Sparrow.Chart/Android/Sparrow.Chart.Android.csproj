@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1C98BCFF-7371-4123-BCC8-E3D627448199}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sparrow.Chart</RootNamespace>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AssemblyName>Sparrow.Chart.Android</AssemblyName>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <Description>Sparrow.Chart
+Sparrow Chart Toolkit for WPF
+Copyright © 2013 Vinoth Kumar J (Author)</Description>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\Common\Keys\Sparrow.Chart.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Chart\SparrowChartView.cs" />
+    <Compile Include="Chart\SparrowChart.cs" />
+    <Compile Include="Utility\CanvasRenderContext.cs" />
+    <Compile Include="Utility\Enum.cs" />
+    <Compile Include="Utility\FrameWorkElement.cs" />
+    <Compile Include="Utility\Image.cs" />
+    <Compile Include="Utility\ImageInfo.cs" />
+    <Compile Include="Utility\IRenderContextInfo.cs" />
+    <Compile Include="Utility\MouseEventArgs.cs" />
+    <Compile Include="Utility\PngEncoder.cs" />
+    <Compile Include="Utility\Point.cs" />
+    <Compile Include="Utility\Size.cs" />
+    <Compile Include="Utility\UIElement.cs" />
+    <Compile Include="Utility\Vector.cs" />
+    <Compile Include="Utility\FastReflectionUtility.cs" />
+    <Compile Include="Utility\Utility.cs" />
+    <Compile Include="Axis\IAxis.cs" />
+    <Compile Include="Collections\Collections.cs" />
+    <Compile Include="Utility\Thickness.cs" />
+    <Compile Include="Container\SeriesContainer.cs" />
+    <Compile Include="Series\SeriesBase.cs" />
+    <Compile Include="Points\ChartPoint.cs" />
+    <Compile Include="SeriesParts\SeriesPartBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Points\CategoryPoint.cs" />
+    <Compile Include="Points\TimeSpanPoint.cs" />
+    <Compile Include="Points\TimePoint.cs" />
+    <Compile Include="Points\DoublePoint.cs" />
+    <Compile Include="Axis\AxisBase.cs" />
+    <Compile Include="Axis\XAxis.cs" />
+    <Compile Include="Axis\YAxis.cs" />
+    <Compile Include="Utility\CanvasPanel.cs" />
+    <Compile Include="Utility\Panel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Chart\" />
+    <Folder Include="Axis\" />
+    <Folder Include="Collections\" />
+    <Folder Include="Container\" />
+    <Folder Include="Utility\" />
+    <Folder Include="Series\" />
+    <Folder Include="SeriesParts\" />
+    <Folder Include="Points\" />
+  </ItemGroup>
+</Project>

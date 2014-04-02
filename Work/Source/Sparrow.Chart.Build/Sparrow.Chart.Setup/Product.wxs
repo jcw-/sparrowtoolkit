@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?define Version="$(env.BuildVersion)"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+<Product Id="*" Name="Sparrow Toolkit for WPF $(var.Version)" Language="1033" Version="$(var.Version)" Manufacturer="Vinoth Kumar J" UpgradeCode="E2E5F86F-8B25-4F1D-A77B-84CB15C2D770">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" AdminImage="yes" InstallPrivileges="elevated" />    
+    <Property Id='ARPHELPLINK'>http://sparrowtoolkit.codeplex.com/discussions</Property>
+    <Property Id='ARPCOMMENTS' >Sparrow Toolkit a set of Data Visualization controls(Chart, Gauge,BulletGraph and Sparkline) with lot of flexibility, performance, faster and more efficient</Property>
+    <Property Id='ARPURLINFOABOUT'>http://sparrowtoolkit.codeplex.com </Property>
+    <Property Id='ARPURLUPDATEINFO'>http://sparrowtoolkit.codeplex.com/releases</Property>
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+		<Feature Id="ProductFeature" Title="Sparrow Toolkit for WPF" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="Framework_4_0"/>
+      <ComponentRef Id="DemoBinaries_4_0"/>
+      <ComponentRef Id="ApplicationShortcut"/>
+      <!--
+      <ComponentRef Id="DIRECTXX86"/>
+      <ComponentRef Id="DIRECTXX64"/>
+      -->
+      <ComponentRef Id="CLASSDOCUMENTATION"/>
+		</Feature>
+</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="DesktopFolder" Name="Desktop"/>
+      <Directory Id="ProgramMenuFolder">
+       <Directory Id="ApplicationProgramsFolder" Name="Sparrow Toolkit">
+          <Component Id="ApplicationShortcut" Guid="F69DBA40-3872-4AE3-8516-94272B661C0A">
+            <Shortcut Id="ApplicationStartMenuShortcut"
+                     Name="Sparrow.Chart.Demos"
+                     Description="Sparrow Chart WPF Demo Browser"
+                     Target="[DEMOBINARIES]Sparrow.Chart.Demos.exe"
+                     WorkingDirectory="DEMOBINARIES" Icon="Icon">
+              <Icon Id="Icon" SourceFile="..\..\..\DemoBinaries\Sparrow.Chart.Demos.exe" />            
+            </Shortcut>
+             <Shortcut Id="UninstallProduct"             
+                          Name="Uninstall Sparrow Toolkit"
+                          Description="Uninstalls the Sparrow Toolkit for WPF"
+                          Target="[System64Folder]msiexec.exe"
+                          Arguments="/x [ProductCode]"/>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Sparrow Toolkit for WPF" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+        </Component>    
+       </Directory>
+      </Directory>
+          
+      <Directory Id="INSTALLDIR">
+         <Directory Id="ProductDirectory" Name="Sparrow  Toolkit">
+           <Directory Id="VERSION" Name="$(var.Version)">
+              <Directory Name="Documentation" Id="DOCUMENTATION">
+                <Component Id="CLASSDOCUMENTATION" DiskId="1" KeyPath="yes" Guid="072111FF-288D-42E6-AF45-239A49C8BCE3">
+                                <File Id="DOCUMENATION.CHM" Name="Documentation.chm" Source="..\..\..\Document\Help\Documentation.chm" />                               
+                </Component>
+              </Directory>
+             <Directory Name="Bin" Id="BIN">
+                        <Directory Name="4.0" Id="_4.0">
+                            <Component Id="Framework_4_0" DiskId="1" KeyPath="yes" Guid="9dac5649-584d-4f94-afbb-25e72f058714">
+                                <File Id="SPARROW.CHART.WPF.40.DLL" Name="Sparrow.Chart.Wpf.40.dll" Source="..\..\Sparrow.Chart\WPF\bin\Release\Sparrow.Chart.Wpf.40.dll" />
+                                <File Id="SPARROW.CHART.WPF.40.XML" Name="Sparrow.Chart.Wpf.40.XML" Source="..\..\Sparrow.Chart\WPF\bin\Release\Sparrow.Chart.Wpf.40.Xml" /> 
+                                <File Id="SPARROW.RESOURCES.DLL" Name="Sparrow.Resources.dll" Source="..\..\Sparrow.Resources\bin\Release\Sparrow.Resources.dll" />
+                                <File Id="SYSTEM.WINDOWS.INTERACTIVITY.DLL" Name="System.Windows.Interactivity.dll" Source="..\..\Sparrow.Resources\bin\Release\System.Windows.Interactivity.dll" />
+                            </Component>
+                          <!--
+                         <Directory Name="x86" Id="X86">
+                            <Component Id="DIRECTXX86" DiskId="1" KeyPath="yes" Guid="FC58861C-5C39-49BA-8596-0F20E7768AAD">
+                                <File Id="SPARROW.CHART.DIRECTX2D_X86.DLL" Name="Sparrow.Chart.DirectX2D_x86.dll" Source="..\..\Sparrow.Chart\bin\x86\Release\Sparrow.Chart.DirectX2D_x86.dll" />
+                                <File Id="SPARROW.DIRECTX_X86.dll" Name="Sparrow.DirectX_x86.dll" Source="..\..\..\Release\Sparrow.DirectX_x86.dll" />                                
+                               <File Id="SPARROW.DIRECTX2D_X86.dll" Name="Sparrow.Directx2D_x86.dll" Source="..\..\Sparrow.Directx2D\bin\x86\Release\Sparrow.Directx2D_x86.dll" />                                
+                            </Component>
+                        </Directory>
+                       <Directory Name="x64" Id="X64">
+                            <Component Id="DIRECTXX64" DiskId="1" KeyPath="yes" Guid="7FA13824-7294-4C6B-AED3-3D66E2B44DBB">
+                                <File Id="SPARROW.CHART.DIRECTX2D_X64.DLL" Name="Sparrow.Chart.DirectX2D_x64.dll" Source="..\..\Sparrow.Chart\bin\x64\Release\Sparrow.Chart.DirectX2D_x64.dll" />
+                                <File Id="SPARROW.DIRECTX_X64.dll" Name="Sparrow.DirectX_x64.dll" Source="..\..\..\x64\Release\Sparrow.DirectX_x64.dll" />                                
+                               <File Id="SPARROW.DIRECTX2D_X64.dll" Name="Sparrow.Directx2D_x64.dll" Source="..\..\Sparrow.Directx2D\bin\x64\Release\Sparrow.Directx2D_x64.dll" />                                
+                            </Component>
+                        </Directory>
+                        -->
+                       </Directory>      
+                       
+          </Directory>
+           <Directory Name="DemoBinaries" Id="DEMOBINARIES">                        
+                 <Component Id="DemoBinaries_4_0" DiskId="1" Guid="10ac5649-584d-4f94-afbb-25e72f058714">
+                   <File Id="SPARROW.CHART.DEMOS.EXE" Name="Sparrow.Chart.Demos.exe" Source="..\..\..\DemoBinaries\Sparrow.Chart.Demos.exe" >
+                     <Shortcut Advertise="yes" 
+                        Id="DemoDesktopShortcut"
+                        Directory="DesktopFolder"
+                        Name="Sparrow.Chart.Demos"
+                        WorkingDirectory="DEMOBINARIES"
+                        Description="Sparrow Chart WPF Demo Browser"
+                        Icon="Icon.exe">
+                       <Icon Id="Icon.exe" SourceFile="..\..\..\DemoBinaries\Sparrow.Chart.Demos.exe" />
+                     </Shortcut>
+                   </File>
+                     <File Id="SYSTEM.WINDOWS.INTERACTIVITY.DEMO" Name="System.Windows.Interactivity.dll" Source="..\..\Sparrow.Resources\bin\Release\System.Windows.Interactivity.dll" /> 
+                 </Component>                                
+          </Directory>
+           </Directory>
+          <Directory Id="GAC" Name="GAC" />
+        </Directory>
+				<Directory Id="INSTALLFOLDER" Name="Sparrow Chart Toolkit" />      
+			</Directory>  
+    </Directory>
+  
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+       <Component Id="ProductComponent" KeyPath="yes" Guid="28982BC3-BCEA-4EAF-9E7E-9E19A9355CFB">
+        <CreateFolder />
+         <RemoveFolder Id="ProductComponent" On="uninstall" />
+			</Component>  
+      <Component  Id="Sparrow.Resources" Guid="65857611-A13E-51ED-897B-A78830F68ADC">                
+               <File Id="F_SparrowChartResources" Name="Sparrow.Resources.dll" Source="..\..\Sparrow.Resources\bin\Release\Sparrow.Resources.dll" KeyPath="yes" Assembly=".net"/>                    
+     </Component> 			
+      <Component  Id="Sparrow.Chart" Guid="55857611-A13E-51ED-897B-A78830F68ADC">                
+               <File Id="F_SparrowChart" Name="Sparrow.Chart.Wpf.40.dll" Source="..\..\Sparrow.Chart\WPF\bin\Release\Sparrow.Chart.Wpf.40.dll" KeyPath="yes" Assembly=".net"/>
+              <RegistryKey Root="HKLM"
+                 Key="SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319\AssemblyFoldersEx\[ProductName]">
+             <RegistryValue Type="string" Value="[ProductDirectory]Bin\4.0" />
+             </RegistryKey>
+     </Component> 	
+      <!--
+     <Component  Id="Sparrow.Chart.DirectX2D_x86.dll" Guid="D61A1B08-EF89-4828-B3FD-65C4BF8CE454">                
+               <File Id="F_SparrowChartDirectXX86" Name="Sparrow.Chart.DirectX2D_x86.dll" Source="..\..\Sparrow.Chart\bin\x86\Release\Sparrow.Chart.DirectX2D_x86.dll" KeyPath="yes" Assembly=".net"/>                    
+     </Component>
+     <Component  Id="Sparrow.Chart.DirectX2D_x64.dll" Guid="6C452518-C616-47EB-A765-07963AC61C2D">                
+               <File Id="F_SparrowChartDirectXX64" Name="Sparrow.Chart.DirectX2D_x64.dll" Source="..\..\Sparrow.Chart\bin\x64\Release\Sparrow.Chart.DirectX2D_x64.dll" KeyPath="yes" Assembly=".net"/>                    
+     </Component> 
+    <Component  Id="Sparrow.DirectX_x86.dll" Guid="461A1B08-EF89-4828-B3FD-65C4BF8CE454">                
+               <File Id="F_SparrowChartDirectXX86Base" Name="Sparrow.DirectX_x86.dll" Source="..\..\..\Release\Sparrow.DirectX_x86.dll" KeyPath="yes" Assembly=".net"/>                    
+     </Component>
+     <Component  Id="Sparrow.DirectX_x64.dll" Guid="5C452518-C616-47EB-A765-07963AC61C2D">                
+               <File Id="F_SparrowChartDirectXX64Base" Name="Sparrow.DirectX_x64.dll" Source="..\..\..\x64\Release\Sparrow.DirectX_x64.dll" KeyPath="yes" Assembly=".net"/>                    
+     </Component> 
+     <Component  Id="Sparrow.Directx2D_x86.dll" Guid="17DA6F77-AEAE-4F7C-8E8A-8C5108785B86">                
+               <File Id="F_SparrowChartDirectX2DX86Base" Name="Sparrow.Directx2D_x86.dll" Source="..\..\Sparrow.Directx2D\bin\x86\Release\Sparrow.Directx2D_x86.dll" KeyPath="yes" Assembly=".net"/>                    
+     </Component>
+     <Component  Id="Sparrow.Directx2D_x64.dll" Guid="B5B78FC4-4D63-454B-9FFE-226377F2127B">                
+               <File Id="F_SparrowChartDirectX2DX64Base" Name="Sparrow.Directx2D_x64.dll" Source="..\..\Sparrow.Directx2D\bin\x64\Release\Sparrow.Directx2D_x64.dll" KeyPath="yes" Assembly=".net"/>                    
+     </Component> 
+     -->
+		</ComponentGroup>
+    
+	</Fragment>
+</Wix>

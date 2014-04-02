@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Product>
+  <Category Name="Showcase">
+    <Sample Name="Live Datas Demo"  Class="Sparrow.Chart.Demos.Demos.LiveDatasDemo.LiveDatasDemo" Image="Images/showcase.png"/>
+    <Sample Name="Performance Demo" Class="Sparrow.Chart.Demos.Demos.PerformanceDemo.PerformanceDemo" Image="Images/showcase.png"/>    
+  </Category>
+</Product>

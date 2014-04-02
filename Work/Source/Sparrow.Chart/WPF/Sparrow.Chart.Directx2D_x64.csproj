@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{561755E1-9492-4EC2-ACA1-8CF76E6CAC5A}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sparrow.Chart</RootNamespace>
+    <AssemblyName>Sparrow.Chart.DirectX2D_x64</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\Sparrow.Chart.DirectX2D_x64.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;DIRECTX2D;X64</DefineConstants>
+    <DocumentationFile>bin\Release\Sparrow.Chart.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DIRECTX2D;WPF</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\Sparrow.Chart.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Axis\AxisBase.cs" />
+    <Compile Include="Collections\Collections.cs" />
+    <Compile Include="Container\AreaContainer.cs" />
+    <Compile Include="Container\AxisCrossLinesContainer.cs" />
+    <Compile Include="Container\SplineContainer.cs" />
+    <Compile Include="Container\StepLineContainer.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\BorderThicknessToLeftAndRightConverter.cs" />
+    <Compile Include="Converters\BorderThicknessToTopBottomConverter.cs" />
+    <Compile Include="Converters\MajorSizeThicknessConverter.cs" />
+    <Compile Include="Converters\StringToChartPointConverter.cs" />
+    <Compile Include="Extensions\WindowsMediaExtensions.cs" />
+    <Compile Include="Container\LineContainer.cs" />
+    <Compile Include="Container\SeriesContainer.cs" />
+    <Compile Include="Legend\Legend.cs" />
+    <Compile Include="Legend\LegendItem.cs" />
+    <Compile Include="Panels\ContainerCollection.cs" />
+    <Compile Include="Panels\RootDockPanel.cs" />
+    <Compile Include="SeriesParts\AreaPart.cs" />
+    <Compile Include="SeriesParts\FillPartBase.cs" />
+    <Compile Include="SeriesParts\LinePart.cs" />
+    <Compile Include="SeriesParts\LinePartBase.cs" />
+    <Compile Include="SeriesParts\LineSinglePart.cs" />
+    <Compile Include="SeriesParts\LineSinglePartBase.cs" />
+    <Compile Include="SeriesParts\SeriesPartBase.cs" />
+    <Compile Include="SeriesParts\SplinePart.cs" />
+    <Compile Include="SeriesParts\StepLinePart.cs" />
+    <Compile Include="SeriesParts\StepLineSinglePart.cs" />
+    <Compile Include="Series\AreaSeries.cs" />
+    <Compile Include="Series\FillSeriesBase.cs" />
+    <Compile Include="Series\LineSeries.cs" />
+    <Compile Include="Series\LineSeriesBase.cs" />
+    <Compile Include="Series\SeriesBase.cs" />
+    <Compile Include="Series\SplineSeries.cs" />
+    <Compile Include="Series\StepLineSeries.cs" />
+    <Compile Include="Utility\AxisUtil.cs" />
+    <Compile Include="Utility\FastReflectionUtility.cs" />
+    <Compile Include="Utility\Recycler.cs" />
+    <Compile Include="Utility\Utility.cs" />
+    <Page Include="Themes\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Axis\Axis.cs" />
+    <Compile Include="Utility\Enum.cs" />
+    <Compile Include="Points\ChartPoint.cs" />
+    <Compile Include="Points\DoublePoint.cs" />
+    <Compile Include="Chart\SparrowChart.cs" />
+    <Compile Include="Points\TimePoint.cs" />
+    <Compile Include="Axis\XAxis.cs" />
+    <Compile Include="Axis\YAxis.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="ChartDiagram.cd" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

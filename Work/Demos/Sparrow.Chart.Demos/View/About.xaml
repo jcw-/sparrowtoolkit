@@ -1,0 +1,79 @@
+﻿<chart:SparrowWindow x:Class="Sparrow.Chart.Demos.View.About"
+        xmlns:prop="clr-namespace:Sparrow.Chart.Demos.Properties"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowStartupLocation="CenterOwner" BorderBrush="Black" BorderThickness="1"
+        xmlns:chart="http://sparrowtoolkit.codeplex.com/wpf" ResizeMode="NoResize" Icon="../Resources/Stocks.ico" ShowIconOnTitleBar="False"
+        Title="About" Height="300" Width="400">
+    <chart:SparrowWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </chart:SparrowWindow.Resources>
+    <Grid>
+        <FlowDocumentReader ViewingMode="Scroll" Foreground="Black">
+            <FlowDocument FontSize="12">
+                <Paragraph TextAlignment="Center">
+                    <Image Source="../Resources/sparrow.png" Height="40" Width="40"/>
+                </Paragraph>
+                <Paragraph FontSize="14" TextAlignment="Center">
+                    <Bold>Sparrow Chart Toolkit</Bold></Paragraph>
+                <Paragraph TextAlignment="Center">
+                    <Bold>Version</Bold>
+                    <Bold>
+                        <TextBlock Text="{x:Static prop:Resources.version}"/>
+                    </Bold>
+                </Paragraph>
+                <Paragraph TextAlignment="Left" FontSize="12">
+                    For more information about Sparrow Chart Toolkit, Please visit
+                    <Hyperlink>
+                        <Bold>http://sparrowtoolkit.codeplex.com/</Bold>
+                    </Hyperlink>                                       
+                </Paragraph>
+                <Paragraph>
+                    <Bold>References</Bold>
+                </Paragraph>
+                <List>
+                    <ListItem>
+                        <Paragraph>http://geekswithblogs.net/Madman/archive/2008/06/27/faster-reflection-using-expression-trees.aspx</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>http://www.codeproject.com/Articles/31859/Draw-a-Smooth-Curve-through-a-Set-of-2D-Points-wit</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>http://www.newyyz.com/ntgsite/2012/02/fast-line-rendering-in-wpf/</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>http://www.kynosarges.de/WpfPerformance.html</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>http://stackoverflow.com/questions/361681/algorithm-for-nice-grid-line-intervals-on-a-graph</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>http://stackoverflow.com/questions/361681/algorithm-for-nice-grid-line-intervals-on-a-graph</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>http://www.codeproject.com/Articles/113991/Using-Direct2D-with-WPF</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>http://archive.msdn.microsoft.com/WindowsAPICodePack</Paragraph>
+                    </ListItem>                   
+                    <ListItem>
+                        <Paragraph>http://mahapps.com/MahApps.Metro/</Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph>
+                    <Bold>License</Bold>
+                </Paragraph>
+                <Paragraph FontFamily="Times New Roman" FontSize="10" >
+                    <TextBlock Text="{x:Static prop:Resources.license}"/>
+                </Paragraph>
+                
+                <Paragraph TextAlignment="Right" FontSize="11">
+                    Copyright ©  2013 Vinoth Kumar J (Author)
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentReader>
+    </Grid>
+</chart:SparrowWindow>

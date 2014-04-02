@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Sparrow.Chart.Installer.UnInstallPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <FlowDocumentScrollViewer IsToolBarVisible="False" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <FlowDocument>
+                <!--<Paragraph TextAlignment="Center">
+                    <Bold>
+                        UnInstall
+                    </Bold>
+                </Paragraph>-->
+                <Paragraph TextAlignment="Left">
+                    Are you sure Want to Uninstall Sparrow Chart Toolkit?
+                </Paragraph>
+                <Paragraph TextAlignment="Left" FontSize="10">
+                    For more information about Sparrow Chart Toolkit,                     
+                    Please visit
+                </Paragraph>
+                <Paragraph TextAlignment="Left"  FontSize="10">
+                    <Hyperlink NavigateUri="http://sparrowtoolkit.codeplex.com/">
+                        <Bold>http://sparrowtoolkit.codeplex.com/</Bold>
+                    </Hyperlink>
+                </Paragraph>
+
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</UserControl>

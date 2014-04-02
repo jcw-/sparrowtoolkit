@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Sparrow.Chart.Demos.Demos.PerformanceDemo.PerformanceDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:chart="http://sparrowtoolkit.codeplex.com/wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.45*"/>
+            </Grid.ColumnDefinitions>
+            <chart:SparrowChart Margin="5" RenderingMode="GDIRendering" SmoothingMode="HighSpeed" CompositingMode="SourceCopy" CompositingQuality="HighSpeed" Theme="Metro"  x:Name="Chart" >
+                <chart:SparrowChart.XAxis>
+                    <chart:LinearXAxis ShowCrossLines="False" MinValue="0" MaxValue="100000"  Header="Point"  StringFormat="0.0"/>
+                </chart:SparrowChart.XAxis>
+                <chart:SparrowChart.YAxis>
+                    <chart:LinearYAxis ShowCrossLines="False" StringFormat="0.0" Header="Value" >
+                    </chart:LinearYAxis>
+                </chart:SparrowChart.YAxis>
+                <chart:LineSeries UseSinglePart="True">
+                </chart:LineSeries>
+            </chart:SparrowChart>            
+            <Grid Grid.Column="1" Margin="5,60,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <!--<Canvas >
+                    <Line X1="0" Y1="8" X2="0" Y2="205" Stroke="Black" Grid.Row="0" Grid.RowSpan="2" StrokeThickness="3"/>
+                </Canvas>-->
+                <chart:SparrowButton Margin="10,20,0,0"  Content="Load 100000 Points" Click="SparrowButton_Click_1" FontFamily="Segoe UI" FontSize="26px" FontWeight="Light" Width="255" HorizontalAlignment="Left" BorderThickness="0" Grid.Row="2"  Grid.Column="1"/>
+                <!--<TextBlock Margin="10,0,0,0" FontFamily="Segoe UI" FontWeight="SemiBold" FontSize="22px" Text="Time Taken" Grid.Row="0" Grid.Column="1" />
+                <TextBlock Margin="10,-10,0,0" FontFamily="Segoe UI" FontWeight="Light" Foreground="#545454" FontSize="85px" x:Name="text"  Grid.Row="1" Grid.Column="1" />-->
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

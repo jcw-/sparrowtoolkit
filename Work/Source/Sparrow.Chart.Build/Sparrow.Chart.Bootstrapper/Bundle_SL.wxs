@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?define Version="$(env.BuildVersion)"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
+	<Bundle Name="Sparrow Chart Toolkit for Silverlight $(var.Version)" Version="$(var.Version)" Copyright="Copyright ©  2013 Vinoth Kumar J (Author)" IconSourceFile="Stocks.ico" Manufacturer="Vinoth Kumar J" UpgradeCode="FD2FFAEA-6877-4DFD-BDF2-BFF13D85A879">
+    <BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost">
+      <Payload SourceFile="..\Sparrow.Chart.Installer\BootstrapperCore.config"/>
+      <Payload SourceFile="..\Sparrow.Chart.Installer\bin\Release\Sparrow.Chart.Installer.dll"/>     
+      <Payload SourceFile="..\Sparrow.Chart.Installer\bin\Release\System.Windows.Interactivity.dll"/>
+      <Payload SourceFile="..\Sparrow.Chart.Installer\bin\Release\GalaSoft.MvvmLight.WPF4.dll"/>
+      <Payload SourceFile="..\..\Sparrow.Resources\bin\Release\Sparrow.Resources.dll"/>
+      <Payload SourceFile="..\Sparrow.Chart.Installer\bin\Release\Microsoft.Deployment.WindowsInstaller.dll"/>
+    </BootstrapperApplicationRef>
+    <Variable Name="INSTALLDIR" Value="[ProgramFilesFolder]"/>
+		<Chain>
+      <PackageGroupRef Id='Netfx4Full' />
+      <MsiPackage SourceFile="..\Sparrow.Chart.Setup\bin\Release\Sparrow.Chart.Setup_SL.msi" Compressed="yes" Id="SparrowChartPackageId" Cache="yes" Visible="no">
+       <MsiProperty Name="INSTALLDIR" Value="[INSTALLDIR]"/>
+        
+      </MsiPackage>      
+    </Chain>
+	</Bundle>
+  <Fragment>
+    <!-- Managed bootstrapper requires .NET as a dependency, since it was written in .NET.
+       WiX provides a Bootstrapper for the bootstrapper. The fragment below includes .NET.
+       For more information or examples see Heath Stewart's blog or the WiX source:
+       http://blogs.msdn.com/b/heaths/archive/2011/10/28/introducing-managed-bootstrapper-applications.aspx
+       -->
+
+    <WixVariable Id="WixMbaPrereqPackageId" Value="Netfx4Full" />
+    <WixVariable Id="WixMbaPrereqLicenseUrl" Value="NetfxLicense.rtf" />
+
+    <util:RegistrySearch Root="HKLM" Key="SOFTWARE\Microsoft\Net Framework Setup\NDP\v4\Full" Value="Version" Variable="Netfx4FullVersion" />
+    <util:RegistrySearch Root="HKLM" Key="SOFTWARE\Microsoft\Net Framework Setup\NDP\v4\Full" Value="Version" Variable="Netfx4x64FullVersion" Win64="yes" />
+
+    <PackageGroup Id="Netfx4Full">
+      <!--<ExePackage Id="Netfx4Full" Name="dotNetFx40_Full_x86_x64.exe" Cache="no" Compressed="yes" PerMachine="yes" Permanent="yes" Vital="yes"
+                  SourceFile="E:\Software\Visual Studio\en_visual_studio_2010_professional_x86_dvd_509727\en_visual_studio_2010_professional_x86_dvd_509727\WCU\dotNetFramework\dotNetFx40_Full_x86_x64.exe"
+                  DownloadUrl="http://go.microsoft.com/fwlink/?LinkId=164193"
+                  DetectCondition="Netfx4FullVersion AND (NOT VersionNT64 OR Netfx4x64FullVersion)" />-->
+    </PackageGroup>
+  </Fragment>
+  
+</Wix>

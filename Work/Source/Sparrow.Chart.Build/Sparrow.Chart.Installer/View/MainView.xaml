@@ -1,0 +1,69 @@
+﻿<sparrow:SparrowWindow x:Class="Sparrow.Chart.Installer.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prop="clr-namespace:Sparrow.Chart.Installer.Properties"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  BorderBrush="Black" BorderThickness="3"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sparrow="http://sparrowtoolkit.codeplex.com/wpf" Foreground="Black"
+        xmlns:local="clr-namespace:Sparrow.Chart.Installer" Icon="../Resources/Stocks.ico"           
+        mc:Ignorable="d" ShowIconOnTitleBar="True" 
+        Title="Sparrow Chart Toolkit Installer" TitleBackground="Black" TitleForeground="White" Width="600" MinWidth="400" Height="400" MinHeight="300">
+    <sparrow:SparrowWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </sparrow:SparrowWindow.Resources>
+   
+    <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image Source="../Resources/license.png"   Visibility="{Binding Path=IsLicensePage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Image Source="../Resources/folder.png"   Visibility="{Binding Path=IsInstallPage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Image Source="../Resources/installaprogres.png"   Visibility="{Binding Path=IsProgressPage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Image Source="../Resources/installfinished.png"   Visibility="{Binding Path=IsFinsihPage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Image Source="../Resources/uninstall.png"   Visibility="{Binding Path=IsUnInstallPage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Image Source="../Resources/uninstallaprogres.png"   Visibility="{Binding Path=IsUnInstallProgressPage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Image Source="../Resources/uninstallfinished.png"   Visibility="{Binding Path=IsUnInstallFinsihPage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <CheckBox VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Command="{Binding Path=AgreeCommand}" Visibility="{Binding Path=IsLicensePage, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="21,20,0,20" x:Name="agreement">I Accept the License and Agreement</CheckBox>
+        <local:LicenseDialog Grid.Row="1" Visibility="{Binding Path=IsLicensePage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <local:UnInstallPage Grid.Row="1" Visibility="{Binding Path=IsUnInstallPage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <Grid Grid.Row="1" Margin="10" x:Name="installView" Visibility="{Binding Path=IsInstallPage, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <!--<TextBlock FontSize="20" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" >Installation Location</TextBlock>-->
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock FontSize="16" >Please Select the Installation Location to Install Sparrow Chart Toolkit</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="locationText" Height="30" TextAlignment="Left" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="19" Text="{Binding Path=InstallLocation}" Width="500"></TextBox>
+                    <sparrow:SparrowButton Command="{Binding BrowseCommand}">Browse</sparrow:SparrowButton>                    
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="5" Visibility="{Binding Path=IsProgressPage, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Text="{Binding Path=Status}"/>            
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="5" Visibility="{Binding Path=IsUnInstallProgressPage, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock VerticalAlignment="Bottom" Foreground="Black" FontSize="15" Text="{Binding Path=Status}"/>
+        </Grid>
+        <sparrow:SparrowBusyIndicator Grid.Row="1" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" IsActive="True" Visibility="{Binding Path=IsThinking, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+        <local:FinishPage Grid.Row="1" Visibility="{Binding Path=IsFinsihPage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <local:FinishedUninstall Grid.Row="1" Visibility="{Binding Path=IsUnInstallFinsihPage, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Row="2">
+            <sparrow:SparrowButton Content="Next" Command="{Binding Path=NextCommand}" IsEnabled="{Binding Path=IsAgree}" Visibility="{Binding Path=IsLicensePage, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="10" />
+            <sparrow:SparrowButton Content="Previous" Command="{Binding Path=PreviousCommand}" Visibility="{Binding Path=IsInstallPage, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="10" />
+            <sparrow:SparrowButton Content="Install" Command="{Binding Path=InstallCommand}" Visibility="{Binding Path=IsInstallPage, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="10" />
+            <sparrow:SparrowButton Content="Uninstall" Command="{Binding Path=UninstallCommand}" Visibility="{Binding Path=UninstallEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="10"  />
+            <sparrow:SparrowButton Content="Exit" Command="{Binding Path=ExitCommand}" Margin="10"  />        
+        </StackPanel>
+    </Grid>
+
+</sparrow:SparrowWindow>

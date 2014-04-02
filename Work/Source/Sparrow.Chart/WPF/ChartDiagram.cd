@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sparrow.Chart.XAxis" Collapsed="true">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <AssociationLine Name="Type" Type="Sparrow.Chart.XType">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.223" Y="0.185" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AkRAAACAAAAAgQBAAAAAAAAAABCACAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Axis\XAxis.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sparrow.Chart.YAxis" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkRAAACAAAAAgQBAAAAAAAAAABCACAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Axis\YAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.SparrowChart" Collapsed="true">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>pCqCBKAbUJZQQyAWEA1AQNPEgZEMKARIAniAQYhEQgk=</HashCode>
+      <FileName>Chart\SparrowChart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.DoublePoint" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAABAAAABAAAAAgAAAAAAA=</HashCode>
+      <FileName>Points\DoublePoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.ChartPoint" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAICAAAAAAgAAAAAAAAEAAAACAAAA=</HashCode>
+      <FileName>Points\ChartPoint.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sparrow.Chart.TimePoint" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAgAAAAAQA=</HashCode>
+      <FileName>Points\TimePoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.LineSeries" Collapsed="true">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAEAACAAAAAAAA=</HashCode>
+      <FileName>Series\LineSeries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.SeriesContainer" Collapsed="true">
+    <Position X="7" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>xAAAAAQEAAAAYgEEAAAgQAABAAAAIAAAAgkGIABIAAE=</HashCode>
+      <FileName>Container\SeriesContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sparrow.Chart.LineContainer">
+    <Position X="9" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Container\LineContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Sparrow.Chart.XType">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAAAAAAAACAA=</HashCode>
+      <FileName>Utility\Enum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Sparrow.Chart.YType">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Utility\Enum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DB782CD-732A-435E-BF8E-87BB990FAFEC}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sparrow.Chart</RootNamespace>
+    <AssemblyName>Sparrow.Chart.WP7.45</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINDOWS_PHONE;WP7;NET45</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;WINDOWS_PHONE;WP7</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>Bin\Release\Sparrow.Chart.WP7.45.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\WPF\Axis\AxisBase.cs">
+      <Link>Axis\AxisBase.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Axis\CategoryXAxis.cs">
+      <Link>Axis\CategoryXAxis.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Axis\DateTimeXAxis.cs">
+      <Link>Axis\DateTimeXAxis.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Axis\DateTimeYAxis.cs">
+      <Link>Axis\DateTimeYAxis.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Axis\IAxis.cs">
+      <Link>Axis\IAxis.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Axis\LinearXAxis.cs">
+      <Link>Axis\LinearXAxis.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Axis\LinearYAxis.cs">
+      <Link>Axis\LinearYAxis.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Axis\XAxis.cs">
+      <Link>Axis\XAxis.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Axis\YAxis.cs">
+      <Link>Axis\YAxis.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Chart\SparrowChart.cs">
+      <Link>Chart\SparrowChart.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Collections\Collections.cs">
+      <Link>Collections\Collections.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Container\AreaContainer.cs">
+      <Link>Container\AreaContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Container\AxisCrossLinesContainer.cs">
+      <Link>Container\AxisCrossLinesContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Container\ColumnContainer.cs">
+      <Link>Container\ColumnContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Container\HiLoOpenCloseContainer.cs">
+      <Link>Container\HiLoOpenCloseContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Container\LineContainer.cs">
+      <Link>Container\LineContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Container\ScatterContainer.cs">
+      <Link>Container\ScatterContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Container\SeriesContainer.cs">
+      <Link>Container\SeriesContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Container\SplineContainer.cs">
+      <Link>Container\SplineContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Container\StepLineContainer.cs">
+      <Link>Container\StepLineContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Converters\BooleanToVisibilityConverter.cs">
+      <Link>Converters\BooleanToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Converters\BorderThicknessToLeftAndRightConverter.cs">
+      <Link>Converters\BorderThicknessToLeftAndRightConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Converters\BorderThicknessToTopBottomConverter.cs">
+      <Link>Converters\BorderThicknessToTopBottomConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Converters\HalfValueConverter.cs">
+      <Link>Converters\HalfValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Converters\MajorSizeThicknessConverter.cs">
+      <Link>Converters\MajorSizeThicknessConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Converters\NegativeConverter.cs">
+      <Link>Converters\NegativeConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Converters\NegativeHalfConverter.cs">
+      <Link>Converters\NegativeHalfConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Converters\StringToChartPointConverter.cs">
+      <Link>Converters\StringToChartPointConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Legend\Legend.cs">
+      <Link>Legend\Legend.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Legend\LegendItem.cs">
+      <Link>Legend\LegendItem.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Panels\AxesPanel.cs">
+      <Link>Panels\AxesPanel.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Panels\ContainerCollection.cs">
+      <Link>Panels\ContainerCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Panels\RootDockPanel.cs">
+      <Link>Panels\RootDockPanel.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Points\CategoryPoint.cs">
+      <Link>Points\CategoryPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Points\ChartPoint.cs">
+      <Link>Points\ChartPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Points\DoublePoint.cs">
+      <Link>Points\DoublePoint.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Points\TimePoint.cs">
+      <Link>Points\TimePoint.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Points\TimeSpanPoint.cs">
+      <Link>Points\TimeSpanPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\AreaPart.cs">
+      <Link>SeriesParts\AreaPart.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\ColumnPart.cs">
+      <Link>SeriesParts\ColumnPart.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\FillPartBase.cs">
+      <Link>SeriesParts\FillPartBase.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\HiLoOpenClosePart.cs">
+      <Link>SeriesParts\HiLoOpenClosePart.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\LinePart.cs">
+      <Link>SeriesParts\LinePart.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\LinePartBase.cs">
+      <Link>SeriesParts\LinePartBase.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\LineSinglePart.cs">
+      <Link>SeriesParts\LineSinglePart.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\LineSinglePartBase.cs">
+      <Link>SeriesParts\LineSinglePartBase.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\ScatterPart.cs">
+      <Link>SeriesParts\ScatterPart.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\SeriesPartBase.cs">
+      <Link>SeriesParts\SeriesPartBase.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\SplinePart.cs">
+      <Link>SeriesParts\SplinePart.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\StepLinePart.cs">
+      <Link>SeriesParts\StepLinePart.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\SeriesParts\StepLineSinglePart.cs">
+      <Link>SeriesParts\StepLineSinglePart.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\AreaSeries.cs">
+      <Link>Series\AreaSeries.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\BubbleSeries.cs">
+      <Link>Series\BubbleSeries.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\ColumnSeries.cs">
+      <Link>Series\ColumnSeries.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\FillSeriesBase.cs">
+      <Link>Series\FillSeriesBase.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\HiLoOpenCloseSeries.cs">
+      <Link>Series\HiLoOpenCloseSeries.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\HiLoSeries.cs">
+      <Link>Series\HiLoSeries.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\LineSeries.cs">
+      <Link>Series\LineSeries.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\LineSeriesBase.cs">
+      <Link>Series\LineSeriesBase.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\ScatterSeries.cs">
+      <Link>Series\ScatterSeries.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\SeriesBase.cs">
+      <Link>Series\SeriesBase.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\SplineSeries.cs">
+      <Link>Series\SplineSeries.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\StepLineSeries.cs">
+      <Link>Series\StepLineSeries.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Series\StockChartBase.cs">
+      <Link>Series\StockChartBase.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Utility\AxisUtil.cs">
+      <Link>Utility\AxisUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Utility\Enum.cs">
+      <Link>Utility\Enum.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Utility\FastReflectionUtility.cs">
+      <Link>Utility\FastReflectionUtility.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Utility\Recycler.cs">
+      <Link>Utility\Recycler.cs</Link>
+    </Compile>
+    <Compile Include="..\WPF\Utility\Utility.cs">
+      <Link>Utility\Utility.cs</Link>
+    </Compile>
+    <Compile Include="Panels\DockPanel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Themes\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

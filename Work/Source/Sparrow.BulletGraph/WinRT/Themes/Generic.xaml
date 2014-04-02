@@ -1,0 +1,41 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sparrow.BulletGraph">
+
+    <Style TargetType="local:BulletGraph">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:BulletGraph">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}" Margin="{TemplateBinding Margin}" Padding="{TemplateBinding Padding}">
+                        <local:DockPanel x:Name="PART_RootDockPanel">
+                            <ContentControl Content="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Header}" HorizontalAlignment="{Binding RelativeSource={RelativeSource TemplatedParent},Path=HeaderHorizontalAlignment}" VerticalAlignment="{Binding RelativeSource={RelativeSource TemplatedParent},Path=HeaderVerticalAlignment}" local:DockPanel.Dock="{Binding RelativeSource={RelativeSource TemplatedParent},Path=HeaderDock}"/>
+                            <local:ElementPanel x:Name="PART_InternalPanel" QualitativeRanges="{Binding RelativeSource={RelativeSource TemplatedParent},Path=QualitativeRanges}" BulletGraph="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                <Canvas x:Name="PART_ElementCanvas"/>
+                                <Canvas x:Name="PART_ScaleCanvas"/>
+                            </local:ElementPanel>
+                        </local:DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MajorTickLineSyle">
+            <Setter.Value>
+                <Style TargetType="Line">
+                    <Setter Property="Stroke" Value="Black"></Setter>
+                    <Setter Property="StrokeThickness" Value="1"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinorTickLineStyle">
+            <Setter.Value>
+                <Style TargetType="Line">
+                    <Setter Property="Stroke" Value="Black"></Setter>
+                    <Setter Property="StrokeThickness" Value="0.5"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

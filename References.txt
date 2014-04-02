@@ -1,0 +1,14 @@
+			References
+
+Links:
+------
+http://geekswithblogs.net/Madman/archive/2008/06/27/faster-reflection-using-expression-trees.aspx
+http://www.codeproject.com/Articles/31859/Draw-a-Smooth-Curve-through-a-Set-of-2D-Points-wit
+http://www.newyyz.com/ntgsite/2012/02/fast-line-rendering-in-wpf/
+http://www.kynosarges.de/WpfPerformance.html
+http://stackoverflow.com/questions/361681/algorithm-for-nice-grid-line-intervals-on-a-graph
+http://www.codeproject.com/Articles/113991/Using-Direct2D-with-WPF
+http://archive.msdn.microsoft.com/WindowsAPICodePack
+http://mahapps.com/MahApps.Metro/
+http://oxyplot.codeplex.com
+

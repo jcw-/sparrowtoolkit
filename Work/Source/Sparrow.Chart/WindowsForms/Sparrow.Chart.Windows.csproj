@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{81577ACA-4092-4600-B369-9928CAD2A28C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sparrow.Chart</RootNamespace>
+    <AssemblyName>Sparrow.Chart.Windows.40</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collections\Axes.cs" />
+    <Compile Include="Axis\Axis.cs" />
+    <Compile Include="Enum\AxisPosition.cs" />
+    <Compile Include="Axis\CategoryXAxis.cs" />
+    <Compile Include="Axis\CategoryYAxis.cs" />
+    <Compile Include="Point\ChartPoint.cs" />
+    <Compile Include="Axis\DateTimeXAxis.cs" />
+    <Compile Include="Point\DateTimePoint.cs" />
+    <Compile Include="Axis\DateTimeYAxis.cs" />
+    <Compile Include="Point\DoublePoint.cs" />
+    <Compile Include="Misc\FastReflection.cs" />
+    <Compile Include="Legend\Legend.cs" />
+    <Compile Include="Axis\LinearXAxis.cs" />
+    <Compile Include="Axis\LinearYAxis.cs" />
+    <Compile Include="Series\LineSeries.cs" />
+    <Compile Include="Part\LineSeriesPart.cs" />
+    <Compile Include="Axis\LogarithmicXAxis.cs" />
+    <Compile Include="Axis\LogarithmicYAxis.cs" />
+    <Compile Include="Collections\PartCollection.cs" />
+    <Compile Include="Point\Point.cs" />
+    <Compile Include="Collections\PointCollection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Misc\RectF.cs" />
+    <Compile Include="Series\Series.cs" />
+    <Compile Include="Collections\SeriesCollection.cs" />
+    <Compile Include="Part\SeriesPart.cs" />
+    <Compile Include="Chart\SparrowChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\TextStyle.cs" />
+    <Compile Include="Misc\Theme.cs" />
+    <Compile Include="Axis\TimeSpanXAxis.cs" />
+    <Compile Include="Axis\TimeSpanYAxis.cs" />
+    <Compile Include="Misc\Utility.cs" />
+    <Compile Include="Axis\XAxis.cs" />
+    <Compile Include="Series\XYSeries.cs" />
+    <Compile Include="Axis\YAxis.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Chart\SparrowChart.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

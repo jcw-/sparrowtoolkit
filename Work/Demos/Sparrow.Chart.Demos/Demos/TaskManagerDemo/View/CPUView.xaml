@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="CPUPerformance.CPUView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:chart="http://sparrowtoolkit.codeplex.com/wpf"
+             xmlns:local="clr-namespace:CPUPerformance"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="containerStyle" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#FF117DBB"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style TargetType="{x:Type Line}" x:Key="crossLineStyle">
+            <Setter Property="Stroke" Value="#FFD9EAFF"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.DataContext>
+            <local:ViewModel/>
+        </Grid.DataContext>
+               
+        <Grid Grid.Row="0" Grid.Column="1" MinWidth="400" MinHeight="350" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="220"/>
+            </Grid.RowDefinitions>
+            <chart:SparrowChart Grid.Row="1" RenderingMode="WritableBitmap" ContainerBorderStyle="{StaticResource containerStyle}">
+                <chart:SparrowChart.XAxis>
+                    <chart:DateTimeXAxis Interval="0:0:1" CrossLineStyle="{StaticResource crossLineStyle}" Visibility="Collapsed"/>
+                </chart:SparrowChart.XAxis>
+                <chart:SparrowChart.YAxis>
+                    <chart:LinearYAxis MinValue="0" CrossLineStyle="{StaticResource crossLineStyle}" Interval="10" MaxValue="100" Visibility="Collapsed"/>
+                </chart:SparrowChart.YAxis>
+                <chart:AreaSeries XPath="Time" Stroke="#FF117DBB" StrokeThickness="1" YPath="Percentage" Fill="#11117DBB" PointsSource="{Binding CPU}"/>
+            </chart:SparrowChart>
+            <Grid Grid.Row="0">
+                <TextBlock Text="% Utilization" FontFamily="Segoe UI Light" Foreground="#FF707070" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+                <TextBlock Text="100%" FontFamily="Segoe UI Light" Foreground="#FF707070" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+                <TextBlock Text="{Binding ProcessorID}" FontFamily="Segoe UI" Margin="0,7,0,0"  FontSize="15" Foreground="#FF000000" VerticalAlignment="Top" HorizontalAlignment="Right" />
+                <TextBlock Text="CPU" FontFamily="Segoe UI Medium" FontSize="22" Foreground="#FF000000" VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+            </Grid>
+            <Grid Grid.Row="2" Height="220" VerticalAlignment="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="90*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="60 seconds" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" />
+                <TextBlock Text="0" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Right" Grid.Column="3" Margin="0,0,-1,0"  />
+                <TextBlock Text="Utilization" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Row="1" Width="49"/>
+                <TextBlock Text="{Binding Utilization}" Margin="0,15,0,0" FontFamily="Segoe UI Medium" FontSize="20" Foreground="Black" HorizontalAlignment="Left" Grid.Row="1" />
+                <TextBlock Text="Speed" FontFamily="Segoe UI Light"  Margin="70,0,0,0" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Row="1" Width="49"/>
+                <TextBlock Text="{Binding Speed}" Margin="70,15,0,0" FontFamily="Segoe UI Medium" FontSize="20" Foreground="Black" HorizontalAlignment="Left" Grid.Row="1" />
+
+                <TextBlock Text="Processes" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Row="2" />
+                <TextBlock Text="{Binding Processes}" Margin="0,15,0,0" FontFamily="Segoe UI Medium" FontSize="20" Foreground="Black" HorizontalAlignment="Left" Grid.Row="2" />
+                <TextBlock Text="Threads" FontFamily="Segoe UI Light" Margin="70,0,0,0" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Row="2" />
+                <TextBlock Text="{Binding ThreadCount}" Margin="70,15,0,0" FontFamily="Segoe UI Medium" FontSize="20" Foreground="Black" HorizontalAlignment="Left" Grid.Row="2" />
+                <TextBlock Text="Handles" FontFamily="Segoe UI Light" Margin="140,0,0,0" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Row="2" />
+                <TextBlock Text="{Binding HandleCount}" Margin="140,15,0,0" FontFamily="Segoe UI Medium" FontSize="20" Foreground="Black" HorizontalAlignment="Left" Grid.Row="2"/>
+
+                <TextBlock Text="Up time" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Row="3" />
+                <TextBlock Text="{Binding UpTime}" Margin="0,15,0,0" FontFamily="Segoe UI Medium" FontSize="20" Foreground="Black" HorizontalAlignment="Left" Grid.Row="3"  />
+
+                <TextBlock Text="Maximum speed:" Margin="0,0,0,0" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" />
+                <!--<TextBlock Text="Sockets:" Margin="0,20,0,0" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" />-->
+                <TextBlock Text="Cores:" Margin="0,28,0,0" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" />
+                <TextBlock Text="Logical Processors:" Margin="0,56,0,0" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Column="1" Grid.RowSpan="3" Grid.Row="1" />
+                <!--<TextBlock Text="Virtualization:" Margin="0,80,0,0" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Column="1" Grid.RowSpan="3" Grid.Row="1" />-->
+                <TextBlock Text="L1 cache" Margin="0,84,0,0" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Column="1" Grid.RowSpan="3" Grid.Row="1" />
+                <TextBlock Text="L2 cache" Margin="0,112,0,0" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Column="1" Grid.RowSpan="3" Grid.Row="1" />
+                <TextBlock Text="L3 cache" Margin="0,140,0,0" FontFamily="Segoe UI Light" Foreground="#FF707070" HorizontalAlignment="Left" Grid.Column="1" Grid.RowSpan="3" Grid.Row="1" />
+
+                <TextBlock Text="{Binding MaximumSpeed}" Margin="0,0,0,0" FontFamily="Segoe UI Medium"  HorizontalAlignment="Left" Grid.Column="2" Grid.Row="1" />
+                <!--<TextBlock Text="{Binding Sockets}" Margin="0,20,0,0" FontFamily="Segoe UI Medium" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="1" />-->
+                <TextBlock Text="{Binding Cores}" Margin="0,28,0,0" FontFamily="Segoe UI Medium"  HorizontalAlignment="Left" Grid.Column="2" Grid.Row="1" />
+                <TextBlock Text="{Binding LogicalProcessors}" Margin="0,56,0,0" FontFamily="Segoe UI Medium"  HorizontalAlignment="Left" Grid.Column="2" Grid.RowSpan="3" Grid.Row="1" />
+                <!--<TextBlock Text="{Binding Virtualization}" Margin="0,80,0,0" FontFamily="Segoe UI Medium"  HorizontalAlignment="Left" Grid.Column="2" Grid.RowSpan="3" Grid.Row="1" />-->
+                <TextBlock Text="{Binding L1Cache}" Margin="0,84,0,0" FontFamily="Segoe UI Medium"  HorizontalAlignment="Left" Grid.Column="2" Grid.RowSpan="3" Grid.Row="1" />
+                <TextBlock Text="{Binding L2Cache}" Margin="0,112,0,0" FontFamily="Segoe UI Medium"  HorizontalAlignment="Left" Grid.Column="2" Grid.RowSpan="3" Grid.Row="1" />
+                <TextBlock Text="{Binding L3Cache}" Margin="0,140,0,0" FontFamily="Segoe UI Medium"  HorizontalAlignment="Left" Grid.Column="2" Grid.RowSpan="3" Grid.Row="1" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

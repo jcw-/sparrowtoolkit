@@ -99,8 +99,8 @@ namespace Sparrow.Chart
             //    result.X = this.XAxis.DataToPoint(pt.X);
             //if (this.YAxis != null)
             //    result.Y = this.YAxis.DataToPoint(pt.Y);
-            result.X = ((pt.X - XMin) * (SeriesContainer.Collection.ActualWidth / (XMax - XMin)));
-            result.Y = (SeriesContainer.Collection.ActualHeight - ((pt.Y - YMin) * SeriesContainer.Collection.ActualHeight) / (YMax - YMin));
+            result.X = ((XMax - XMin) == 0) ? pt.X : ((pt.X - XMin) * (SeriesContainer.Collection.ActualWidth / (XMax - XMin)));
+            result.Y = ((YMax - YMin) == 0) ? pt.Y : (SeriesContainer.Collection.ActualHeight - ((pt.Y - YMin) * SeriesContainer.Collection.ActualHeight) / (YMax - YMin));
             return result;
         }
 
